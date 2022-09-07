@@ -5,6 +5,7 @@ import (
 	"github.com/google/wire"
 	"server/internal/config"
 	"server/internal/engine"
+	"server/internal/web/middleware"
 )
 
 type Router struct {
@@ -14,6 +15,9 @@ type Router struct {
 var Provider = wire.NewSet(NewRouter)
 
 func NewRouter(config *config.Config,engine *engine.WebEngine) *Router{
+
+	// 1.全局异常
+	engine.Engine.Use(middleware.Recover())
 
 	User(engine)
 
