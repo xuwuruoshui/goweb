@@ -1,0 +1,21 @@
+web:
+  port: 8080
+
+database:
+  type: mysql
+  url: 192.168.0.132
+  port: 3306
+  username: root
+  password: root
+  dbname: test_db
+  params: charset=utf8mb4&parseTime=True&loc=Local
+  maxIdleConns: 20
+  maxOpenConns: 100
+cache:
+  type: redis
+  url: 192.168.0.132
+  port: 6379
+  password:
+
+
+
